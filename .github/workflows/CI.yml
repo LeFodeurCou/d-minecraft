@@ -1,0 +1,15 @@
+name: d-minecraft-CI
+on:
+  push:
+  workflow_dispatch:
+  pull_request:
+      types: [ closed ]
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo
+        uses: actions/checkout@v2
+      - name: Build image
+        run: docker build -t minecraft-server:1.17.1 .
