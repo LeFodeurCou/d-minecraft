@@ -19,7 +19,7 @@ jobs:
         with:
           registry: lefodeurcou.jfrog.io
           username: ${{ secrets.JFROG_USER }}
-          password: ${{ secrets.JFROG_TOKEN }}
+          password: ${{ secrets.JFROG_PASSWORD }}
       - name: 🐸 Tag image 🐸
         run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker-local/minecraft-server:1.17.1
       - name: 🐸 Send as artifact 🐸
