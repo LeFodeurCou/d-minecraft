@@ -34,8 +34,8 @@ jobs:
       - name: 🐳 Tag image 🐸
         run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:1.17.1-${{ steps.time.outputs.time }}
       - name: 🐳 Tag image as latest 🐸
-        run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server
+        run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:latest
       - name: 🐸 Send as artifact 🐸
         run: docker push lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:1.17.1-${{ steps.time.outputs.time }}
       - name: 🐸 Send latest as artifact 🐸
-        run: docker push lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server
+        run: docker push lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:latest
