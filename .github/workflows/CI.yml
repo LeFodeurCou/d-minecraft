@@ -16,11 +16,11 @@ jobs:
         with:
           timeZone: 2
           format: 'YYYY-MM-DD-HH-mm-ss'
-      - name: Usage
-        env:
-          TIME: "${{ steps.time.outputs.time }}"
-        run: |
-          echo $TIME
+      # - name: Usage
+      #   env:
+      #     TIME: "${{ steps.time.outputs.time }}"
+      #   run: |
+      #     echo $TIME
       - name: Get repo
         uses: actions/checkout@v2
       - name: 🐳 Build image 🐳
@@ -33,5 +33,9 @@ jobs:
           password: ${{ secrets.JFROG_PASSWORD }}
       - name: 🐳 Tag image 🐸
         run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:1.17.1-${{ steps.time.outputs.time }}
+      - name: 🐳 Tag image as latest 🐸
+        run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:latest
       - name: 🐸 Send as artifact 🐸
         run: docker push lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:1.17.1-${{ steps.time.outputs.time }}
+      - name: 🐸 Send latest as artifact 🐸
+        run: docker push lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:latest
