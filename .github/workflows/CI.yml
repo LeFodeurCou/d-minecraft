@@ -31,6 +31,8 @@ jobs:
           registry: lefodeurcou.jfrog.io
           username: ${{ secrets.JFROG_USER }}
           password: ${{ secrets.JFROG_PASSWORD }}
+      - name: 🐳 Delete latest image 🐳
+        run: docker rmi lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:latest
       - name: 🐳 Tag image 🐸
         run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server:1.17.1-${{ steps.time.outputs.time }}
       - name: 🐳 Tag image as latest 🐸
