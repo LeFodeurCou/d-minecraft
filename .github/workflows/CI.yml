@@ -32,6 +32,6 @@ jobs:
           username: ${{ secrets.JFROG_USER }}
           password: ${{ secrets.JFROG_PASSWORD }}
       - name: 🐳 Tag image 🐸
-        run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker-local/minecraft-server:1.17.1-${{ steps.time.outputs.time }}
+        run: docker tag minecraft-server:1.17.1 lefodeurcou.jfrog.io/minecraft-server-docker-local/minecraft-server:1.17.1.${{ steps.time.outputs.time }}
       - name: 🐸 Send as artifact 🐸
-        run: docker push lefodeurcou.jfrog.io/minecraft-server-docker-local/minecraft-server:1.17.1-${{ steps.time.outputs.time }}
+        run: docker push lefodeurcou.jfrog.io/minecraft-server-docker-local/minecraft-server:1.17.1.${{ steps.time.outputs.time }}
