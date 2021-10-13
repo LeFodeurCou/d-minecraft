@@ -16,11 +16,6 @@ jobs:
         with:
           timeZone: 2
           format: 'YYYY-MM-DD-HH-mm-ss'
-      # - name: Usage
-      #   env:
-      #     TIME: "${{ steps.time.outputs.time }}"
-      #   run: |
-      #     echo $TIME
       - name: Get repo
         uses: actions/checkout@v2
       - name: 🐳 Build image 🐳
