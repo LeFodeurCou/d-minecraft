@@ -19,5 +19,16 @@ docker run \
 	--rm \
 	-p 25565:25565 \
 	-p 8123:8123 \
+	-v ${PWD}/minecraft-server:/minecraft-server \
 	--name minecraft-server \
 	minecraft-server-test
+
+# docker run \
+# 	-d \
+# 	--rm \
+# 	-p 25565:25565 \
+# 	-p 8123:8123 \
+# 	--name minecraft-server \
+# 	minecraft-server-test
+
+### docker pull lefodeurcou.jfrog.io/minecraft-server-docker/minecraft-server

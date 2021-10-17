@@ -1,2 +1,8 @@
 d-minecraft.code-workspace
 tmp/
+minecraft-server/*
+!minecraft-server/plugins/
+minecraft-server/plugins/*
+!minecraft-server/plugins/Dynmap-3.2.1-spigot.jar
+!minecraft-server/paper-1.17.1-327.jar
+!minecraft-server/eula.txt
